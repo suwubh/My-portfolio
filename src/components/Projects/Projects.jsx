@@ -47,7 +47,7 @@ function Projects() {
               imgPath={chess}
               isBlog={false}
               title="Chess4Nerds"
-              description="Multiplayer chess platform built with TypeScript. Features real-time gameplay, match state management, and interactive UI with resign/draw/exit functionality. Implements chess game logic and multiplayer synchronization."
+              description="Multiplayer chess platform built with TypeScript. Features real-time gameplay, match state management, and interactive UI with leaderboard, match history and elo rating functionality. Implements chess game logic and multiplayer synchronization."
               ghLink="https://github.com/suwubh/Chess4Nerds"
             />
           </Col>
