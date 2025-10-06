@@ -1,17 +1,11 @@
-import { useCallback } from "react";
-import Particles from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
+import React from "react";
+import Particles from "react-tsparticles";
 
 function Particle() {
-  const particlesInit = useCallback(async (engine) => {
-    await loadSlim(engine);
-  }, []);
-
   return (
     <Particles
       id="tsparticles"
-      init={particlesInit}
-      options={{
+      params={{
         particles: {
           number: {
             value: 160,
