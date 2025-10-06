@@ -2,12 +2,12 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-// You'll need to add these project images to your Assets folder
-import piggytrack from "../../Assets/Projects/piggytrack.png";
-import scriblio from "../../Assets/Projects/scriblio.png";
-import chess from "../../Assets/Projects/chess.png";
-import pdfAnnotator from "../../Assets/Projects/pdf-annotator.png";
-import saasNotes from "../../Assets/Projects/saas-notes.png";
+// You'll need to add these project images to your assets folder
+import piggytrack from "../../assets/Projects/piggytrack.png";
+import scriblio from "../../assets/Projects/scriblio.png";
+import chess from "../../assets/Projects/chess.png";
+import pdfAnnotator from "../../assets/Projects/pdf-annotator.png";
+import saasNotes from "../../assets/Projects/saas-notes.png";
 
 function Projects() {
   return (
