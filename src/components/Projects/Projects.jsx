@@ -2,12 +2,12 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-// You'll need to add these project images to your assets folder
 import piggytrack from "../../assets/Projects/piggytrack.png";
 import scriblio from "../../assets/Projects/scriblio.png";
 import chess from "../../assets/Projects/chess.png";
 import pdfAnnotator from "../../assets/Projects/pdf-annotator.png";
 import saasNotes from "../../assets/Projects/saas-notes.png";
+import readhaven from "../../assets/Projects/readhaven.png";
 
 function Projects() {
   return (
@@ -21,16 +21,18 @@ function Projects() {
           Here are a few projects I've worked on recently.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+
           <Col md={4} className="project-card">
             <ProjectCard
-              imgPath={piggytrack}
+              imgPath={readhaven}
               isBlog={false}
-              title="PiggyTrack"
-              description="Personal Finance Dashboard built with MERN stack. Features expense tracking, budget management, and financial analytics with real-time data visualization. Built with React, Node.js, Express, and MongoDB for comprehensive financial management."
-              ghLink="https://github.com/suwubh/PiggyTrack"
-              demoLink="https://piggytrack-vbyp.onrender.com"
+              title="ReadHaven"
+              description="A community-driven book discovery and discussion platform inspired by social feeds. Features reader profiles, book-centric feeds, community discussions, and engagement-focused UX. Built with React, Next.js, and modern web technologies to make reading social."
+              ghLink="https://github.com/suwubh/ReadHaven"
+              demoLink="https://read-haven-sandy.vercel.app"
             />
           </Col>
+
 
           <Col md={4} className="project-card">
             <ProjectCard
@@ -54,23 +56,23 @@ function Projects() {
 
           <Col md={4} className="project-card">
             <ProjectCard
+              imgPath={piggytrack}
+              isBlog={false}
+              title="PiggyTrack"
+              description="Personal Finance Dashboard built with MERN stack. Features expense tracking, budget management, and financial analytics with real-time data visualization. Built with React, Node.js, Express, and MongoDB for comprehensive financial management."
+              ghLink="https://github.com/suwubh/PiggyTrack"
+              demoLink="https://piggytrack-vbyp.onrender.com"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
               imgPath={pdfAnnotator}
               isBlog={false}
               title="PDF Annotator"
               description="PDF annotation tool built with TypeScript allowing users to upload, view, highlight, and annotate PDF documents with persistent storage. Features interactive PDF viewer with real-time annotation capabilities and cloud storage integration."
               ghLink="https://github.com/suwubh/Pdf-annotator"
               demoLink="https://pdf-annotator-orpin.vercel.app"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={saasNotes}
-              isBlog={false}
-              title="SaaS Notes App"
-              description="Multi-tenant SaaS Notes Application with role-based access control built with TypeScript. Features user authentication, real-time note synchronization, and scalable multi-tenant architecture for enterprise use."
-              ghLink="https://github.com/suwubh/saas-notes-app"
-              demoLink="https://saas-notes-app-frontend.vercel.app"
             />
           </Col>
         </Row>

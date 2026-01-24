@@ -15,7 +15,7 @@ function AboutCard() {
             <br />
             Although my academic background lies in ECE, I somehow ended up communicating more with code than with circuits.
             <br />
-            Over time, I have built strong skills in full-stack development, working with technologies like React, Node.js, TypeScript, REST APIs, WebSockets, and Redis.
+            Over time, I have built strong skills in full-stack development, working with technologies like React, Node.js, TypeScript, REST APIs, WebSockets and Next.js.
             <br />
             
             <br />
