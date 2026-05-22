@@ -1,80 +1,91 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { AiFillGithub } from "react-icons/ai";
+import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { FaXTwitter } from "react-icons/fa6";
-import { FaLinkedinIn } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import { SiChessdotcom } from "react-icons/si";
+import { profile } from "../data";
 
+const NAV = [
+  { id: "about", label: "About" },
+  { id: "skills", label: "Skills" },
+  { id: "work", label: "Work" },
+  { id: "achievements", label: "Achievements" },
+  { id: "contact", label: "Contact" },
+];
 
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+  const year = new Date().getFullYear();
   return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by Subhankar Satpathy</h3>
-        </Col>
-        <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} suwubh</h3>
-        </Col>
-        <Col md="4" className="footer-body">
-          <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/suwubh"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
+    <footer className="footer">
+      <div className="container footer-inner">
+        <div className="footer-top">
+          <div className="footer-brand">
+            <a href="#home" className="nav-logo footer-logo">
+              <span className="nav-logo-brk">&lt;</span>
+              <span className="nav-logo-name">SS</span>
+              <span className="nav-logo-brk">/&gt;</span>
+            </a>
+            <p>
+              Building fast, real-time, well-tested products on the modern web.
+              Always up for an interesting problem.
+            </p>
+            <div className="footer-socials">
+              <a href={profile.socials.github} target="_blank" rel="noreferrer" aria-label="GitHub">
+                <FiGithub />
               </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://x.com/suwubh"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
+              <a href={profile.socials.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <FiLinkedin />
+              </a>
+              <a href={profile.socials.twitter} target="_blank" rel="noreferrer" aria-label="X / Twitter">
                 <FaXTwitter />
               </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/subhankar-satpathy"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.chess.com/member/shubhoooooo"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
+              <a href={profile.socials.chess} target="_blank" rel="noreferrer" aria-label="Chess.com">
                 <SiChessdotcom />
               </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="mailto:subhankarsatpathy69@gmail.com"
-                style={{ color: "white" }}
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <MdEmail />
+              <a href={`mailto:${profile.email}`} aria-label="Email">
+                <FiMail />
               </a>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
+            </div>
+          </div>
+
+          <div className="footer-nav">
+            <h4>Navigate</h4>
+            <ul>
+              {NAV.map((n) => (
+                <li key={n.id}>
+                  <a href={`#${n.id}`}>{n.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="footer-nav">
+            <h4>Get in touch</h4>
+            <ul>
+              <li>
+                <a href={`mailto:${profile.email}`}>{profile.email}</a>
+              </li>
+              <li>
+                <a href={profile.socials.linkedin} target="_blank" rel="noreferrer">
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href={profile.socials.github} target="_blank" rel="noreferrer">
+                  GitHub
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <span>© {year} Subhankar Satpathy. All rights reserved.</span>
+          <span className="footer-built">
+            Designed &amp; built with React, Vite &amp; Framer Motion.
+          </span>
+        </div>
+      </div>
+    </footer>
   );
 }
 
