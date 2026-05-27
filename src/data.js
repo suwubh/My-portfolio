@@ -28,7 +28,7 @@ export const profile = {
 export const heroStats = [
   { value: 600, suffix: "+", label: "DSA Problems Solved" },
   { value: 1769, suffix: "", label: "LeetCode Rating (Knight)" },
-  { value: 8.15, suffix: "", label: "Current CGPA", decimals: 2 },
+  { value: 1459, suffix: "", label: "Codeforces Rating(Specialist)"},
   { value: 2, suffix: "×", label: "Hackathon Wins / Finals" },
 ];
 
