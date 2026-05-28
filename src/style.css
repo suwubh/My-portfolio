@@ -62,6 +62,30 @@
   animation: drift 30s ease-in-out infinite;
 }
 
+.bg-tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* hero / top of page: cool blue radial rising from the top edge */
+.bg-tint--blue {
+  background: radial-gradient(
+    ellipse 110% 55% at 50% 0%,
+    rgba(96, 165, 250, 0.09),
+    transparent 68%
+  );
+}
+
+/* contact / bottom of page: violet radial rising from the bottom edge */
+.bg-tint--purple {
+  background: radial-gradient(
+    ellipse 110% 55% at 50% 100%,
+    rgba(139, 92, 246, 0.11),
+    transparent 68%
+  );
+}
+
 .bg-canvas {
   position: absolute;
   inset: 0;

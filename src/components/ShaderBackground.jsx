@@ -59,15 +59,19 @@ void main() {
   vec3 deep   = vec3(0.070, 0.070, 0.080);
   vec3 zinc   = vec3(0.150, 0.150, 0.165);
   vec3 blue   = vec3(0.235, 0.510, 0.965);
+  vec3 violet = vec3(0.52,  0.33,  0.95);
 
   vec3 col = bg;
   col = mix(col, deep, clamp(q.x * 0.75, 0.0, 1.0));
   col = mix(col, zinc, smoothstep(0.30, 1.15, f) * 0.28);
-  col = mix(col, blue, smoothstep(0.58, 1.24, q.y + f * 0.4) * 0.12);
+  // boosted from 0.12 → 0.20 so the nebula reads clearly
+  col = mix(col, blue, smoothstep(0.58, 1.24, q.y + f * 0.4) * 0.20);
 
-  // subtle cursor response
+  // cursor bloom — visible glow that follows the mouse
+  // radius expanded (0.32→0.50) and intensity tripled (0.035→0.11)
   float md = distance(uv, u_mouse);
-  col += blue * 0.035 * smoothstep(0.32, 0.0, md);
+  col += blue   * 0.11 * smoothstep(0.50, 0.0, md);
+  col += violet * 0.04 * smoothstep(0.26, 0.0, md);
 
   // vignette
   float vig = smoothstep(1.25, 0.25, length(uv - 0.5));
@@ -142,8 +146,8 @@ function ShaderBackground() {
     gl.enableVertexAttribArray(aPos);
     gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
 
-    const uTime = gl.getUniformLocation(program, "u_time");
-    const uRes = gl.getUniformLocation(program, "u_resolution");
+    const uTime  = gl.getUniformLocation(program, "u_time");
+    const uRes   = gl.getUniformLocation(program, "u_resolution");
     const uMouse = gl.getUniformLocation(program, "u_mouse");
 
     const SCALE = 0.5; // render at half-res — the field is soft, upscaling is invisible
@@ -152,10 +156,10 @@ function ShaderBackground() {
     let running = true;
 
     const resize = () => {
-      const w = Math.max(1, Math.floor(window.innerWidth * SCALE));
+      const w = Math.max(1, Math.floor(window.innerWidth  * SCALE));
       const h = Math.max(1, Math.floor(window.innerHeight * SCALE));
       if (canvas.width !== w || canvas.height !== h) {
-        canvas.width = w;
+        canvas.width  = w;
         canvas.height = h;
         gl.viewport(0, 0, w, h);
       }
@@ -179,8 +183,8 @@ function ShaderBackground() {
       mouse.x += (mouse.tx - mouse.x) * 0.05;
       mouse.y += (mouse.ty - mouse.y) * 0.05;
       const t = reduce ? 8 : (now - start) / 1000;
-      gl.uniform1f(uTime, t);
-      gl.uniform2f(uRes, canvas.width, canvas.height);
+      gl.uniform1f(uTime,  t);
+      gl.uniform2f(uRes,   canvas.width, canvas.height);
       gl.uniform2f(uMouse, mouse.x, mouse.y);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
       if (!reduce) raf = requestAnimationFrame(render);
