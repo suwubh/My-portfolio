@@ -7,8 +7,8 @@ import { about } from "../data";
 const FACT_ICONS = [FiMapPin, FiAward, FiZap, FiBriefcase];
 
 const calendarTheme = {
-  light: ["#ebedf0", "#c6c2f0", "#9b8be0", "#7c5fd0", "#5b3fae"],
-  dark: ["#15152a", "#3b2d6b", "#5b3fae", "#8b5cf6", "#b79bff"],
+  light: ["#e4e4e7", "#bfdbfe", "#93c5fd", "#60a5fa", "#3b82f6"],
+  dark: ["#18181b", "#1e3a5f", "#2563eb", "#60a5fa", "#93c5fd"],
 };
 
 function About() {

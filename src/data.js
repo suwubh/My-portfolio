@@ -150,7 +150,7 @@ export const projects = [
     tagline: "AI-Powered Collaborative Whiteboard",
     period: "Sept 2025 — May 2026",
     image: "scriblio",
-    accent: "#a78bfa",
+    accent: "#60a5fa",
     summary:
       "A real-time collaborative whiteboard powered by CRDTs and WebRTC, with a natural-language LLM command palette that turns text prompts into shapes, diagrams and layouts.",
     highlights: [
@@ -219,7 +219,7 @@ export const projects = [
     tagline: "Social Book Discovery Platform",
     period: "Jan 2026 — May 2026",
     image: "readhaven",
-    accent: "#22d3ee",
+    accent: "#3b82f6",
     summary:
       "A full-stack social reading platform with vector-similarity recommendations, semantic search, and a 7K+ book catalog — built on Next.js 16 with SSR and a tested, CI-gated pipeline.",
     highlights: [

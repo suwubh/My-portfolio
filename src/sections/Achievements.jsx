@@ -19,9 +19,9 @@ const TAG_ICON = {
 };
 
 const PLATFORM = {
-  LeetCode: { Icon: SiLeetcode, accent: "#f5a623" },
+  LeetCode: { Icon: SiLeetcode, accent: "#a1a1aa" },
   Codeforces: { Icon: SiCodeforces, accent: "#60a5fa" },
-  CodeChef: { Icon: SiCodechef, accent: "#a78bfa" },
+  CodeChef: { Icon: SiCodechef, accent: "#93c5fd" },
 };
 
 function Achievements() {
@@ -56,7 +56,7 @@ function Achievements() {
           {codingProfiles.map((cp, i) => {
             const meta = PLATFORM[cp.platform] || {
               Icon: FiCode,
-              accent: "#8b5cf6",
+              accent: "#60a5fa",
             };
             const { Icon, accent } = meta;
             return (

@@ -6,7 +6,7 @@ attribute vec2 a_pos;
 void main() { gl_Position = vec4(a_pos, 0.0, 1.0); }
 `;
 
-/* animated domain-warped fbm gradient — violet / blue nebula */
+/* animated domain-warped fbm gradient for a quiet charcoal / blue backdrop */
 const FRAG = `
 #ifdef GL_FRAGMENT_PRECISION_HIGH
 precision highp float;
@@ -55,19 +55,19 @@ void main() {
   vec2 q = vec2(fbm(p + vec2(0.0, t)), fbm(p + vec2(5.2, 1.3) - t));
   float f = fbm(p + 3.2 * q + t * 0.5);
 
-  vec3 bg     = vec3(0.027, 0.027, 0.055);
-  vec3 deep   = vec3(0.070, 0.040, 0.160);
-  vec3 violet = vec3(0.420, 0.270, 0.850);
-  vec3 blue   = vec3(0.160, 0.340, 0.860);
+  vec3 bg     = vec3(0.035, 0.035, 0.043);
+  vec3 deep   = vec3(0.070, 0.070, 0.080);
+  vec3 zinc   = vec3(0.150, 0.150, 0.165);
+  vec3 blue   = vec3(0.235, 0.510, 0.965);
 
   vec3 col = bg;
-  col = mix(col, deep,   clamp(q.x * 1.1, 0.0, 1.0));
-  col = mix(col, violet, smoothstep(0.25, 1.15, f) * 0.5);
-  col = mix(col, blue,   smoothstep(0.45, 1.20, q.y + f * 0.4) * 0.32);
+  col = mix(col, deep, clamp(q.x * 0.75, 0.0, 1.0));
+  col = mix(col, zinc, smoothstep(0.30, 1.15, f) * 0.28);
+  col = mix(col, blue, smoothstep(0.58, 1.24, q.y + f * 0.4) * 0.12);
 
-  // cursor glow
+  // subtle cursor response
   float md = distance(uv, u_mouse);
-  col += violet * 0.10 * smoothstep(0.34, 0.0, md);
+  col += blue * 0.035 * smoothstep(0.32, 0.0, md);
 
   // vignette
   float vig = smoothstep(1.25, 0.25, length(uv - 0.5));
