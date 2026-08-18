@@ -706,6 +706,21 @@ button:focus {
   justify-content: center;
 }
 
+.resume-preview {
+  display: block;
+  width: min(100%, 980px);
+  height: 1100px;
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  border-radius: 8px;
+  background: #fff;
+}
+
+@media (max-width: 767px) {
+  .resume-preview {
+    height: 760px;
+  }
+}
+
 .resume-left {
   padding-right: 80px !important;
 }
