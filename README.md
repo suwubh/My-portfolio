@@ -2,15 +2,16 @@
 
 My personal portfolio — [my-portfolio-suwubh.vercel.app](https://my-portfolio-suwubh.vercel.app)
 
-Single-page site built with React + Vite. Dark theme, smooth-scroll layout,
-an interactive terminal in the hero, and a WebGL shader background written
-by hand (no Three.js).
+Multi-page portfolio built with React + Vite. It uses React Router for
+separate Home, About, Projects, Resume, and Contact pages, with a dark blue
+theme and animated particle background.
 
 ## Stack
 
 - React 18 + Vite
-- Framer Motion for animation and scroll interactions
-- Raw WebGL for the background shader
+- React Router for page navigation
+- React Bootstrap for layout and responsive UI
+- tsParticles for the background stars
 - EmailJS for the contact form
 - react-github-calendar for the contribution graph
 
@@ -24,7 +25,9 @@ npm run build    # production build -> dist/
 
 ## Notes
 
-All the content (projects, skills, achievements, links) lives in
+Components live in `src/components`, grouped by page or shared function.
+The resume PDF is stored at `src/assets/Subhankar_Satpathy.pdf`.
+<!--
 [`src/data.js`](src/data.js) — that's the only file to touch when something
 needs updating. Components are split into `src/components` (shared bits) and
-`src/sections` (the page sections).
+`src/sections` (the page sections). -->

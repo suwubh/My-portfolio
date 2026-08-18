@@ -1,56 +1,51 @@
 import React, { useState, useEffect } from "react";
-import { AnimatePresence } from "framer-motion";
-import Preloader from "./components/Preloader";
-import Background from "./components/Background";
+import Preloader from "./components/Pre";
 import Navbar from "./components/Navbar";
-import ScrollProgress from "./components/ScrollProgress";
-import BackToTop from "./components/BackToTop";
-import Marquee from "./components/Marquee";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer";
-import Hero from "./sections/Hero";
-import About from "./sections/About";
-import Skills from "./sections/Skills";
-import Projects from "./sections/Projects";
-import Achievements from "./sections/Achievements";
-import Contact from "./sections/Contact";
-import resumeUrl from "./assets/Subhankar_Satpathy.pdf?url";
+import Resume from "./components/Resume/ResumeNew";
+import Contact from "./components/Contact/Contact";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate
+} from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop";
 import "./style.css";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [load, updateLoad] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2000);
+    const timer = setTimeout(() => {
+      updateLoad(false);
+    }, 1200);
+
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    document.body.classList.toggle("no-scroll", loading);
-  }, [loading]);
-
   return (
-    <>
-      <AnimatePresence mode="wait">
-        {loading && <Preloader key="preloader" />}
-      </AnimatePresence>
-
-      <Background />
-      <ScrollProgress />
-      <Navbar resumeUrl={resumeUrl} />
-
-      <main>
-        <Hero />
-        <Marquee />
-        <About />
-        <Skills />
-        <Projects />
-        <Achievements />
-        <Contact resumeUrl={resumeUrl} />
-      </main>
-
-      <Footer />
-      <BackToTop />
-    </>
+    <Router>
+      <Preloader load={load} />
+      <div className="App" id={load ? "no-scroll" : "scroll"}>
+        <Navbar />
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/project" element={<Projects />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

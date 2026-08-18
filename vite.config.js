@@ -13,7 +13,6 @@ export default defineConfig({
       output: {
         manualChunks: {
           "react-vendor": ["react", "react-dom"],
-          "motion-vendor": ["framer-motion"],
           "icons-vendor": ["react-icons"],
           "utils-vendor": ["@emailjs/browser", "react-github-calendar"],
         },
