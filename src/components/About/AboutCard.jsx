@@ -13,6 +13,8 @@ function AboutCard() {
             <br />
             I am currently pursuing B.Tech in Electronics and Communication Engineering at BIT Mesra, graduating in 2027.
             <br />
+            I am also the Technical Lead at IEEE Student Chapter, BIT Mesra.
+            <br />
             Although my academic background lies in ECE, I somehow ended up communicating more with code than with circuits.
             <br />
             Over time, I have built strong skills in full-stack development, working with React, Next.js, TypeScript, Node.js, PostgreSQL, Redis, REST APIs, WebSockets, CRDTs and LLM integrations.
