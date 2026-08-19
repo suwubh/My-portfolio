@@ -226,7 +226,7 @@ function Contact() {
                 <AiOutlineMail />
               </a>
               <a
-                href="https://www.linkedin.com/in/subhankar-satpathy-5b8940257/"
+                href="https://www.linkedin.com/in/subhankar-satpathy"
                 target="_blank"
                 rel="noreferrer"
                 className="contact-social-icons"

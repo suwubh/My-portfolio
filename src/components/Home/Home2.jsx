@@ -6,6 +6,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { AiFillGithub } from "react-icons/ai";
 import { MdEmail } from "react-icons/md";
 import { FaLinkedinIn } from "react-icons/fa";
+import { FaCode } from "react-icons/fa6";
 
 function Home2() {
   return (
@@ -21,7 +22,7 @@ function Home2() {
               <br />
               <br />I am fluent in classics like
               <i>
-                <b className="purple"> C++, Javascript and SQL. </b>
+                <b className="purple"> C++, Javascript, Python and SQL. </b>
               </i>
               <br />
               <br />
@@ -52,6 +53,17 @@ function Home2() {
               Feel free to <span className="purple">connect </span>with me
             </p>
             <ul className="home-about-social-links">
+              <li className="social-icons">
+                <a
+                  href="https://codolio.com/profile/suwubh"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="icon-colour home-social-icons"
+                  aria-label="Codolio"
+                >
+                  <FaCode />
+                </a>
+              </li>
               <li className="social-icons">
                 <a
                   href="https://github.com/suwubh"

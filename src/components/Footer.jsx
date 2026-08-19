@@ -5,6 +5,7 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { SiChessdotcom } from "react-icons/si";
+import { FaCode } from "react-icons/fa6";
 
 
 function Footer() {
@@ -21,6 +22,17 @@ function Footer() {
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
+            <li className="social-icons">
+              <a
+                href="https://codolio.com/profile/suwubh"
+                style={{ color: "white" }}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Codolio"
+              >
+                <FaCode />
+              </a>
+            </li>
             <li className="social-icons">
               <a
                 href="https://github.com/suwubh"

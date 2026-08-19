@@ -4,6 +4,7 @@ import Particle from "../Particle";
 import Github from "./Github";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
+import Achievements from "./Achievements";
 import laptopImg from "../../assets/about.png";
 import Toolstack from "./Toolstack";
 
@@ -25,6 +26,7 @@ function About() {
               Know Who <strong className="purple">I'M</strong>
             </h1>
             <Aboutcard />
+            <Achievements />
           </Col>
           <Col
             md={5}
