@@ -17,6 +17,7 @@ import {
   SiTailwindcss,
   SiExpress,
   SiSocketdotio,
+  SiPython,
 } from "react-icons/si";
 import { GrMysql } from "react-icons/gr";
 
@@ -31,6 +32,9 @@ function Techstack() {
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <SiTypescript />
+      </Col>
+      <Col xs={4} md={2} className="tech-icons">
+        <SiPython />
       </Col>
       <Col xs={4} md={2} className="tech-icons">
         <DiReact />
